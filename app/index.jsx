@@ -10,7 +10,6 @@ import SignInButton from "../components/signin-button";
 export default function App() {
   return (
     <SafeAreaView className="flex-1 bg-white">
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View className="flex-1 items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10">
           <Image
             source={signin}
@@ -25,7 +24,6 @@ export default function App() {
             By creating an account, or signing in, you are agreeing to our Terms of Service and Privacy Policy.
           </Text>
         </View>
-      </ScrollView>
     </SafeAreaView>
   );
 }

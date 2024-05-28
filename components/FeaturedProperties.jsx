@@ -48,21 +48,6 @@ const FeaturedProperties = () => {
     },
   ];
 
-  const renderItem = ({ item }) => (
-    <FeaturedCard
-      image={item.image}
-      location={item.location}
-      totalValue={item.totalValue}
-      startingPrice={item.startingPrice}
-      peopleRegistered={item.peopleRegistered}
-      bedrooms={item.bedrooms}
-      bathrooms={item.bathrooms}
-      sqft={item.sqft}
-      acres={item.acres}
-      handlePress={()=>router.push('/ongoing')}
-    />
-  );
-
   return (
     <SafeAreaView
     className='w-full h-full flex pb-24 '
@@ -81,7 +66,7 @@ const FeaturedProperties = () => {
             bathrooms={item.bathrooms}
             sqft={item.sqft}
             acres={item.acres}
-            handlePress={() => router.push('/info')}
+            
           />
         ))}
       </ScrollView>

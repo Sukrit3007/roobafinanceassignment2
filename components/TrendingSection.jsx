@@ -7,10 +7,12 @@ import {
 } from "react-native";
 import { Card } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome6 } from '@expo/vector-icons';
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
+import { router } from "expo-router";
 
 const data = [
   {
@@ -58,20 +60,24 @@ export default TrendingSection;
 
 function TrendingCard({ item }) {
   return (
-    <Card className="h-[30vh] w-[90vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] mr-4">
-      <ImageBackground source={item.image} className="h-full opacity-90">
-        <LinearGradient
-          colors={["#FFFFFF00", "#1E1E1E60", "#000000BF"]}
-          locations={[0, 0.375, 0.75]}
-          className="h-full"
-        >
-          <Card.Content className="h-full justify-end p-4">
-            <CardInfo item={item} />
-            <CardButtons item={item} />
-          </Card.Content>
-        </LinearGradient>
-      </ImageBackground>
-    </Card>
+    <TouchableOpacity
+      onPress={()=>router.push('/info')}
+    >
+      <Card className="h-[30vh] w-[90vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] mr-4">
+        <ImageBackground source={item.image} className="h-full opacity-90">
+          <LinearGradient
+            colors={["#FFFFFF00", "#1E1E1E60", "#000000BF"]}
+            locations={[0, 0.375, 0.75]}
+            className="h-full"
+          >
+            <Card.Content className="h-full justify-end p-4">
+              <CardInfo item={item} />
+              <CardButtons item={item} />
+            </Card.Content>
+          </LinearGradient>
+        </ImageBackground>
+      </Card>
+    </TouchableOpacity>
   );
 }
 
@@ -80,6 +86,7 @@ function CardButtons({ item }) {
     <View className="flex-row justify-between">
       {/* Button One */}
       <TouchableOpacity
+        onPress={()=>router.push('/info')}
         activeOpacity={0.7}
         className="bg-[#EBE7D359] shadow rounded-none p-1 flex-row justify-center items-center flex-1 mr-1"
       >
@@ -91,10 +98,11 @@ function CardButtons({ item }) {
 
       {/* Button Two */}
       <TouchableOpacity
+        onPress={()=>router.push('/info')}
         activeOpacity={0.7}
         className="bg-[#EBE7D3] shadow rounded-none p-1 flex-row justify-center items-center flex-1"
       >
-        <MaterialIcons name="group-add" size={16} color="#121212" />
+        <FontAwesome6 name="arrow-right-from-bracket" size={16} color="#121212" />
         <Text className="text-[#121212] text-xs ml-1">
           {item.registeredUsers}
         </Text>

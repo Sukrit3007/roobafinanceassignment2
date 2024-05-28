@@ -13,14 +13,16 @@ import OtherInfo from "../../components/Info/OtherInfo";
 import Timeline from "../../components/Info/Timeline";
 import { Accordion1, Accordion2, Accordion3 } from "../../components/Info/Accordion";
 import InfoButton from "../../components/Info/InfoButton";
+import Navbar from "../../components/Info/Navbar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const Info = () => {
   return (
-    <View className="relative">
+    <SafeAreaView className="relative">
       <ScrollView className="h-full">
         {/* IMAGE */}
-        <ImageBackground source={mainimage} className="h-[25vh] w-full">
+        <ImageBackground source={mainimage} className="h-[35vh] w-full border">
           <LinearGradient
             colors={["#FFFFFF00", "#1E1E1E60", "#000000BF"]}
             locations={[0, 0.375, 0.75]}
@@ -47,10 +49,17 @@ const Info = () => {
           <Accordion3 />
         </View>
       </ScrollView>
+
+      {/* Navbar */}
+      <View className="absolute w-full top-0 inset-0">
+        <Navbar/>
+      </View>
+
+      {/* Bottom Button */}
       <View className="absolute w-full bottom-0 inset-0">
         <InfoButton />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

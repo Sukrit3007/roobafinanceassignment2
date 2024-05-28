@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import "nativewind"; // Ensure NativeWind is imported correctly
+
+
 
 const FeaturedCard = ({
   image,
@@ -12,11 +13,9 @@ const FeaturedCard = ({
   bathrooms,
   sqft,
   acres,
-  handlePress,
 }) => {
   return (
     <TouchableOpacity
-      onPress={handlePress}
       activeOpacity={0.8}
       className="w-full flex-row rounded-none border-[0.75px] p-4 mb-4"
     >
@@ -86,7 +85,6 @@ const FeaturedCard = ({
 
         <View className="w-full items-end">
           <TouchableOpacity
-            onPress={handlePress}
             activeOpacity={0.8}
             className="bg-black px-4 py-2 rounded-none"
           >
