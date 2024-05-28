@@ -26,7 +26,8 @@
     "react-native-screens": "3.31.1",
     "react-native-shared-element": "^0.8.9",
     "react-native-tab-view": "^3.5.2",
-    "react-native-user-avatar": "^1.0.8"
+    "react-native-user-avatar": "^1.0.8",
+    "react-native-reanimated": "~3.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

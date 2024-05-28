@@ -17,9 +17,11 @@ import Navbar from "../../components/Info/Navbar";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
+
+
 const Info = () => {
   return (
-    <SafeAreaView className="relative">
+    <SafeAreaView  className="relative">
       <ScrollView className="h-full">
         {/* IMAGE */}
         <ImageBackground source={mainimage} className="h-[35vh] w-full border">
